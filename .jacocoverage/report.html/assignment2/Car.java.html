@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Car.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Assignment2&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">assignment2</a> &gt; <span class="el_source">Car.java</span></div><h1>Car.java</h1><pre class="source lang-java linenums">
+package assignment2;
+
+import java.time.LocalDate;
+import java.time.Period;
+
+/**
+ *
+ * @author harvinder
+ */
+public class Car {
+    
+    /**
+     * initializing  variables with their datatype
+     */
+    private String manufacture ;
+    private String modelNo ;
+    private LocalDate modelYear ;
+    private double price ;
+    private String color ;
+    private double distance ;
+
+    
+    /**
+     *  creating constructor of class car
+     */
+<span class="fc" id="L27">    public Car(String manufacture, String modelNo, LocalDate modelYear, double price, String color, double distance) {</span>
+<span class="fc" id="L28">        setManufacture(manufacture);</span>
+<span class="fc" id="L29">        setModelNo(modelNo);</span>
+<span class="fc" id="L30">        setModelYear(modelYear);</span>
+<span class="fc" id="L31">        setPrice(price);</span>
+<span class="fc" id="L32">        setColor(color);</span>
+<span class="fc" id="L33">        setDistance(distance);</span>
+<span class="fc" id="L34">    }</span>
+    
+    /**
+     * creating get method for manufacture
+     */
+    public String getManufacture() {
+<span class="fc" id="L40">        return manufacture;</span>
+    }
+    
+    
+    /**
+     * 
+     * set method for manufacture which validate whether the manufacture is empty or not and then initialize it  
+     */
+    public void setManufacture(String manufacture) {
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if(manufacture.isEmpty())</span>
+        {
+<span class="fc" id="L51">            throw new IllegalArgumentException(&quot;manufacture name must not be empty &quot;);</span>
+        }
+        else 
+<span class="fc" id="L54">            this.manufacture = manufacture;</span>
+<span class="fc" id="L55">    }</span>
+
+    public String getModelNo() {
+<span class="fc" id="L58">        return modelNo;</span>
+    }
+    
+    /**
+     * 
+     * set method for modelNo which validate whether the modelNo is empty or not and then initialize it
+     */
+    public void setModelNo(String modelNo) {
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if(modelNo.isEmpty())</span>
+        {
+<span class="fc" id="L68">           throw new IllegalArgumentException(&quot;ModelNo must not be empty&quot;); </span>
+        }
+        else
+<span class="fc" id="L71">            this.modelNo = modelNo;</span>
+<span class="fc" id="L72">    }</span>
+
+    public LocalDate getModelYear() {
+<span class="fc" id="L75">        return modelYear;</span>
+    }
+    
+    /**
+     * set method for modelYear which validate whether the modelYear is less than 15 years and then initialize it
+     */
+    
+    public void setModelYear(LocalDate modelYear) {
+<span class="fc" id="L83">        int year = Period.between(modelYear, LocalDate.now()).getYears() ;</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">         if(year &gt; 15)</span>
+         {
+<span class="fc" id="L86">            throw new IllegalArgumentException(&quot;ModelYear  must be less than 15 year so that car can be sell&quot;);  </span>
+         }
+         else  
+<span class="fc" id="L89">            this.modelYear = modelYear;</span>
+<span class="fc" id="L90">    }</span>
+    
+    /**
+     * get method for Price 
+     */
+    public double getPrice() {
+<span class="fc" id="L96">        return price;</span>
+    }
+    
+    /**
+     * set method for price which checks whether the price is greater than 0 or not
+     */
+    public void setPrice(double price) {
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        if(price&gt;0)</span>
+        {
+<span class="fc" id="L105">            this.price = price;</span>
+        }
+        else 
+<span class="fc" id="L108">            throw new IllegalArgumentException(&quot;price must be greater than 0&quot;); </span>
+<span class="fc" id="L109">    }</span>
+    
+    
+    /**
+     *  get method for color
+     */
+    public String getColor() {
+<span class="fc" id="L116">        return color;</span>
+    }
+    
+    /**
+     * 
+     * set method for color 
+     */
+    public void setColor(String color) {
+<span class="fc bfc" id="L124" title="All 2 branches covered.">        if(color.isEmpty())</span>
+        {
+<span class="fc" id="L126">            throw new IllegalArgumentException(&quot;color of car must not be empty&quot;); </span>
+        }
+        else
+<span class="fc" id="L129">            this.color = color;</span>
+<span class="fc" id="L130">    }</span>
+   /**
+    * 
+    * get method for distance  
+    */
+    public double getDistance() {
+<span class="fc" id="L136">        return distance;</span>
+    }
+     /**
+      * set method for distance which checks whether the distance is greater than 0 or not  
+      */
+    public void setDistance(double distance) {
+<span class="fc bfc" id="L142" title="All 2 branches covered.">        if(distance&gt;0)</span>
+        {
+<span class="fc" id="L144">            this.distance = distance;</span>
+        }
+        else
+<span class="fc" id="L147">            throw new IllegalArgumentException(&quot;distance must be greater than 0&quot;);</span>
+<span class="fc" id="L148">    }</span>
+    
+    /**
+     * creating getYear methods which calculates  year from current date 
+     */
+     public int  getYear()
+     {
+<span class="fc" id="L155">         int year = Period.between(modelYear, LocalDate.now()).getYears() ;</span>
+<span class="fc" id="L156">         return year ;             </span>
+     }
+     
+     /**
+      * 
+      * creating method name currentSellingPrice which calculate the selling price of car 
+      */
+     public double currentSellingPrice()
+     {
+<span class="fc" id="L165">         int year = Period.between(modelYear, LocalDate.now()).getYears();</span>
+<span class="fc" id="L166">         return price * distance/year ;</span>
+     }
+    
+    
+    
+    
+    
+    
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
