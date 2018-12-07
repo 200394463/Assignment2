@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="638.0" prefWidth="941.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="assignment2.CarController">
+    <stylesheets>
+        <URL value="@car.css" />
+    </stylesheets>
+   <children>
+      <GridPane alignment="CENTER" layoutX="142.0" layoutY="14.0" maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" prefHeight="451.0" prefWidth="480.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="363.0" minWidth="10.0" prefWidth="207.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="358.0" minWidth="0.0" prefWidth="273.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="123.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="121.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Manufacture Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Model Number" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="27.0" prefWidth="110.0" text="Model Year" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="manufactureTxtField" prefWidth="400.0" GridPane.columnIndex="1" />
+            <TextField fx:id="modelTxtFiled" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker fx:id="modelYearlabel" onAction="#datePickerChanged" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Price" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Colour" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Distance" GridPane.rowIndex="5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="priceTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="colourChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="distanceTxtField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Current Period Year " GridPane.rowIndex="6">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="currentYearTxtField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Label fx:id="sellCarLabel" layoutX="142.0" layoutY="478.0" prefHeight="27.0" prefWidth="154.0" text="Want To Sell Car">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="397.0" layoutY="465.0" prefHeight="96.0" prefWidth="84.0" spacing="5.0">
+         <children>
+            <CheckBox fx:id="yesCheckBox" mnemonicParsing="false" text="Yes">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="noCheckBox" mnemonicParsing="false" text="No">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="notSureCheckBox" mnemonicParsing="false" prefHeight="40.0" prefWidth="75.0" text="Not Sure">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </VBox>
+      <Button layoutX="648.0" layoutY="567.0" mnemonicParsing="false" onAction="#checkBoxSelected" text="Submit">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imageView" fitHeight="385.0" fitWidth="235.0" layoutX="664.0" layoutY="54.0" pickOnBounds="true" />
+      <Button layoutX="782.0" layoutY="567.0" mnemonicParsing="false" onAction="#changeToCarTableButtonPushed" text="Go to Table ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

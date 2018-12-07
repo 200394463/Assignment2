@@ -81,7 +81,7 @@ public class Car {
     
     public void setModelYear(LocalDate modelYear) {
         int year = Period.between(modelYear, LocalDate.now()).getYears() ;
-         if(year > 15)
+         if(year < 15)
          {
             throw new IllegalArgumentException("ModelYear  must be less than 15 year so that car can be sell");  
          }
